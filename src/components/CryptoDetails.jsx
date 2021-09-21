@@ -145,6 +145,29 @@ const CryptoDetails = () => {
           ))}
         </Col>
       </Col>
+      <Col className="coin-desc-link">
+        <Row className="coin-desc">
+          <Title level={3} className="coin-details-heading">
+            What is {cryptoDetails.name}
+            {HTMLReactParser(cryptoDetails.description)}
+          </Title>
+        </Row>
+        <Col className="coin-links">
+          <Title className="coin-details-heading" level={3}>
+            {cryptoDetails.name} Links
+          </Title>
+          {cryptoDetails.links.map((link) => (
+            <Row className="coin-link" key={link.name}>
+              <Title className="link-name" level={5}>
+                {link.type}
+              </Title>
+              <a href={link.url} target="_blank">
+                {link.name}
+              </a>
+            </Row>
+          ))}
+        </Col>
+      </Col>
     </Col>
   )
 }
